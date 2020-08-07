@@ -4,10 +4,14 @@ from django.shortcuts import render
 
 def home(request):
 	template ='first_app/index.html'
-	context = {}
+	context = {
+		'title' :"Home"
+	}
 	return render(request, template,context)
 
 def student_form(request):
 	template ='first_app/student_form.html'
-	context = {}
+	context = {
+		'title' :"Student Form"
+	}
 	return render(request, template,context)
