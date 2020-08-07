@@ -11,9 +11,9 @@ class Student(models.Model):
 	def __str__(self):
 		return self.first_name+" "+self.last_name
 	
-	class Meta:
-		verbose_name       ='Stuent'    
-		verbose_name_plural='Stuents'    
+	class Meta:		
+		verbose_name       ='Student'    
+		verbose_name_plural='Students'    
 
     
 

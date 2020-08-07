@@ -35,3 +35,28 @@ def student_form(request):
 		'form':form
 	}
 	return render(request, template,context)
+
+def student_update(request,id):	
+	students = Student.objects.get(pk=id)	
+	form = forms.StudentForm(instance=student_info)
+
+	if request.method == "POST":
+		form = forms.StudentForm(request.POST, instance=student_info)
+
+		if form.is_valid():
+			form.save(commit=True)
+			return home(request)
+	template ='first_app/student_update.html'
+	context = {		
+		'update_form':form
+	}
+	return render(request, template,context)
+
+def student_delete(request,id):	
+	student = Student.objects.get(pk=id).delete()		
+	template ='first_app/student_delete.html'
+	context = {		
+		'delete_message':"Delete Successfully!"
+	}
+	return render(request, template,context)
+

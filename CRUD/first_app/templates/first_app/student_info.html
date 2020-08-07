@@ -1,8 +1,10 @@
 {% extends 'first_app/base.html' %}
 
 {% block content %}
+	<p>ID : {{students.id}}</p>
 	<h1>Full Name : {{students}}</h1>	
 	<h1>Email : {{students.email}}</h1>	
-	<h1>Phone : {{students.phone}}</h1>	
-	
+	<h1>Phone : {{students.phone}}</h1>		
+	<p>Resource Link : <a href="{% url 'first_app:student_update' id=students.id %}">Update</a></p>
+	<p>Resource Link : <a href="{% url 'first_app:student_delete' id=students.id %}">Delete</a></p>
 {% endblock %}

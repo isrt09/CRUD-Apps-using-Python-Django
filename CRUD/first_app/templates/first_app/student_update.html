@@ -1,0 +1,9 @@
+{% extends 'first_app/base.html' %}
+
+{% block content %}	
+	<h1>student_update</h1>
+	<form action="" method="post">
+		{{update_form}}
+		{% csrf_token%}
+	</form>
+{% endblock %}
