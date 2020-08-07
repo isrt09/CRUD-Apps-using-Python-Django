@@ -13,6 +13,15 @@ def home(request):
 	}
 	return render(request, template,context)
 
+def student_info(request,id):
+	students = Student.objects.get(pk=id)
+	template ='first_app/student_info.html'
+	context = {
+		'title' :"Home",
+		'students':students
+	}
+	return render(request, template,context)
+
 def student_form(request):
 	form = forms.StudentForm()
 	if request.method == 'POST':
