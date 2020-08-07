@@ -1,5 +1,15 @@
 {% extends 'first_app/base.html' %}
 
 {% block content %}
-	<h1>Home Page Section</h1>
+	<h1>Student Information List</h1>
+	{% if students %}
+		<ul>
+			{% for student in students%}
+			<li>{{student.first_name}} {{student.last_name}}</li>
+			{% endfor %}
+		</ul>
+	{%else%}
+		<h1>No Student Exists!!</h1>
+	{%endif%}
+	
 {% endblock %}

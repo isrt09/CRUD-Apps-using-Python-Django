@@ -1,12 +1,15 @@
 from django.shortcuts import render
 from first_app import forms
+from first_app.models import Student
 
 # Create your views here.
 
 def home(request):
+	students = Student.objects.all()
 	template ='first_app/index.html'
 	context = {
-		'title' :"Home"
+		'title' :"Home",
+		'students':students
 	}
 	return render(request, template,context)
 
