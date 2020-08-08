@@ -38,10 +38,10 @@ def student_form(request):
 
 def student_update(request,id):	
 	students = Student.objects.get(pk=id)	
-	form = forms.StudentForm(instance=student_info)
+	form = forms.StudentForm(instance=students)
 
 	if request.method == "POST":
-		form = forms.StudentForm(request.POST, instance=student_info)
+		form = forms.StudentForm(request.POST, instance=students)
 
 		if form.is_valid():
 			form.save(commit=True)
